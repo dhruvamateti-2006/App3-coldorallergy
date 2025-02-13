@@ -111,10 +111,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 	<a href="#two" class="w3-btn w3-black" onclick="allergyAdd()"> Yes </a>
 	<a href="#two" class="w3-btn w3-black" onclick="coldAdd()"> No </a>
-//code that puts out first question and then links to question two. Adds value 1 to either allergy or cold depending on button
-	
-</div>
 
+</div>
+//code that puts out first question and then links to question two. Adds value 1 to either allergy or cold depending on button
 <div class="page" id="two">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
@@ -159,11 +158,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <div class="page" id="results">
         <div class="w3-container w3-flat-carrot">
             <h1>Results</h1>
-        </div> //meant to be cool little thing where it shows loading and then changed to results... didn't work though unfortunately
+        </div> 
         <div id="content" class="w3-container">
             <p id="resultsText">Loading results...</p>
         </div>
-
+//meant to be cool little thing where it shows loading and then changed to results... didn't work though unfortunately
         <script>
             // Display the results when the page loads
             window.onload = function() {
