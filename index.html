@@ -36,7 +36,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
 <script>
-    // Initializing variables
+    // Initial variables value set to 0
     var allergy_count = 0;
     var cold_count = 0;
 
@@ -111,7 +111,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 	<a href="#two" class="w3-btn w3-black" onclick="allergyAdd()"> Yes </a>
 	<a href="#two" class="w3-btn w3-black" onclick="coldAdd()"> No </a>
-
+// code that puts out first question and then links to question two. Adds value 1 to either allergy or cold depending on button
 	
 </div>
 
@@ -126,6 +126,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<a href="#three" class="w3-btn w3-black" onclick="coldAdd()"> No </a>
 	</div>
 </div>	
+//code that puts out second question and then links to question three. Adds value 1 to either allergy or cold depending on button
 
 <div class="page" id="three">
 	<div class="w3-container w3-flat-carrot">
@@ -138,6 +139,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<a href="#four" class="w3-btn w3-black" onclick="coldAdd()"> No </a>
 	</div>
 </div>	
+//code that puts out third question and then links to question four. Adds value 1 to either allergy or cold depending on button
+
 
 <div class="page" id="four">
 	<div class="w3-container w3-flat-carrot">
@@ -149,13 +152,15 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<a href="#results" class="w3-btn w3-black" onclick="allergyAdd()"> Yes </a>
 		<a href="#results" class="w3-btn w3-black" onclick="coldAdd()"> No </a>
 	</div>
-</div>	
+</div>
+//code that puts out 4th question and then links to results. Adds value 1 to either allergy or cold depending on button
+
 
 <div class="page" id="results">
         <div class="w3-container w3-flat-carrot">
             <h1>Results</h1>
         </div>
-
+//meant to be cool little thing where it shows loading and then changed to results... didn't work though unfortunately
         <div id="content" class="w3-container">
             <p id="resultsText">Loading results...</p>
         </div>
@@ -167,7 +172,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             }
         </script>
     </div>
-	
+//calls initial function set for results displaying and is meant to display percentages. Couldn't get the percentages to show even though functions are being called and 
+//variables are being added to respectively. I'm really lost, tbh
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
