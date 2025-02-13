@@ -50,13 +50,24 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         cold_count = cold_count + 1;
     }
 
-    // Function to calculate results and display them on the results page
-    function displayResults() {
-        var allergyPercent = (allergy_count / (allergy_count + cold_count)) * 100;
-        var coldPercent = (cold_count / (allergy_count + cold_count)) * 100;
+   // Function to calculate results and display them on the results page
+function displayResults() {
+    var totalAnswers = allergy_count + cold_count;
+    
+    // Make sure that all questions have been answered (i.e., 4 questions)
+    if (totalAnswers === 4) {
+        // Calculate the percentages by multiplying each count by 25
+        var allergyPercent = allergy_count * 25;
+        var coldPercent = cold_count * 25;
         
         var resultText = document.getElementById("resultsText");
-        resultText.innerHTML = "Probability it is allergies = " + (allergy_count * 25) + "%<br> Probability it is a cold = " + (cold_count * 25) + "%";
+        resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "%<br> Probability it is a cold = " + coldPercent + "%";
+    } else {
+        // If not all questions are answered
+        var resultText = document.getElementById("resultsText");
+        resultText.innerHTML = "Please answer all the questions to get results!";
+    }
+}
     }
 </script>
 
