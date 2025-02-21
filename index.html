@@ -36,32 +36,30 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
 <script>
-    // Initial variables value set to 0
+//Initial variables value set to 0//
     var allergy_count = 0;
     var cold_count = 0;
 
-    // Function to increase allergy count
+//Function to increase allergy count//
     function allergyAdd() {
         allergy_count = allergy_count + 1;
+	    alert("allergy count :" + allergy_count);
     }
 
-    // Function to increase cold count
+// Function to increase cold count//
     function coldAdd() {
         cold_count = cold_count + 1;
+	    alert("allergy count :" + allergy_count);
     }
 
-    // Function to calculate results and display them on the results page
+//Function to calculate results and display them on the results page//
     function displayResults() {
         var allergyPercent = (allergy_count / (allergy_count + cold_count)) * 100;
         var coldPercent = (cold_count / (allergy_count + cold_count)) * 100;
-        
-        var resultText = document.getElementById("resultsText");
-        resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "%<br> Probability it is a cold = " + coldPercent + "%";
+        var resultText = document.getElementById("results");
+        resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "% + "<br> Probability it is a cold = " + coldPercent + "%";
     }
 </script>
-
-
-
 
 
 <style>	
@@ -107,25 +105,23 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
     	<div id="content" class="w3-container">
         <p>Are your eyes watery or itchy?</p>    
-    	</div>
-
-	<a href="#two" class="w3-btn w3-black" onclick="allergyAdd()"> Yes </a>
-	<a href="#two" class="w3-btn w3-black" onclick="coldAdd()"> No </a>
-
+		<a href="#two" onclick="allergyAdd();" class="w3-btn w3-black" > Yes </a>
+		<a href="#two" onclick="coldAdd();" class="w3-btn w3-black" > No </a>
+	</div>
 </div>
-//code that puts out first question and then links to question two. Adds value 1 to either allergy or cold depending on button
+//code that puts out first question and then links to question two. Adds value 1 to either allergy or cold depending on button//
 <div class="page" id="two">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Do you have a fever?</p>
-		<a href="#three" class="w3-btn w3-black" onclick="allergyAdd()"> Yes </a>
-		<a href="#three" class="w3-btn w3-black" onclick="coldAdd()"> No </a>
+	<p>Do you have a fever?</p>
+		<a href="#three" onclick="allergyAdd()"; class="w3-btn w3-black" > Yes </a>
+		<a href="#three" onclick="coldAdd()"; class="w3-btn w3-black" > No </a>
 	</div>
 </div>	
-//code that puts out second question and then links to question three. Adds value 1 to either allergy or cold depending on button
+//code that puts out second question and then links to question three. Adds value 1 to either allergy or cold depending on button//
 
 <div class="page" id="three">
 	<div class="w3-container w3-flat-carrot">
@@ -133,12 +129,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Do you have a sore throat?</p>
-		<a href="#four" class="w3-btn w3-black" onclick="allergyAdd()"> Yes </a>
-		<a href="#four" class="w3-btn w3-black" onclick="coldAdd()"> No </a>
+	<p>Do you have a sore throat?</p>
+		<a href="#four" onclick="allergyAdd();" class="w3-btn w3-black" > Yes </a>
+		<a href="#four" onclick="coldAdd();" class="w3-btn w3-black" > No </a>
 	</div>
 </div>	
-//code that puts out third question and then links to question four. Adds value 1 to either allergy or cold depending on button
+//code that puts out third question and then links to question four. Adds value 1 to either allergy or cold depending on button//
 
 
 <div class="page" id="four">
@@ -148,11 +144,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">
 		<p>Are your symptoms seasonal or chronic?</p>
-		<a href="#results" class="w3-btn w3-black" onclick="allergyAdd()"> Yes </a>
-		<a href="#results" class="w3-btn w3-black" onclick="coldAdd()"> No </a>
+		<a href="#results" onclick="allergyAdd();" class="w3-btn w3-black" > Yes </a>
+		<a href="#results"onclick="coldAdd();" class="w3-btn w3-black" > No </a>
 	</div>
 </div>
-//code that puts out 4th question and then links to results. Adds value 1 to either allergy or cold depending on button
+//code that puts out 4th question and then links to results. Adds value 1 to either allergy or cold depending on button//
 
 
 <div class="page" id="results">
@@ -160,19 +156,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             <h1>Results</h1>
         </div> 
         <div id="content" class="w3-container">
-            <p id="resultsText">Loading results...</p>
-        </div>
-
-        <script>
-            // Display the results when the page loads
-            window.onload = function() {
-                displayResults();
-            }
-        </script>
-    </div>
-//meant to be cool little thing where it shows loading and then changed to results... didn't work though unfortunately
-//calls initial function set for results displaying and is meant to display percentages. Couldn't get the percentages to show even though functions are being called and 
-//variables are being added to respectively. I'm really lost, tbh
+            <a onclick="displayResults();" class="w3-btn v3-grey w3-round"> Click for results </a>
+	    <p id="results"></p>
+	</div>
+</div>
+        
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
