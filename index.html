@@ -36,29 +36,30 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
 <script>
-//Initial variables value set to 0//
     var allergy_count = 0;
     var cold_count = 0;
-
-//Function to increase allergy count//
-    function allergyAdd() {
+//Initial variables value set to 0//
+	
+    function allergyAdd(){
         allergy_count = allergy_count + 1;
-	    alert("allergy count :" + allergy_count);
+	    alert("allergy count : " + allergy_count);
     }
-
-// Function to increase cold count//
-    function coldAdd() {
+//When allergy button is clicked, allergy score goes up by 1//
+	
+    function coldAdd(){
         cold_count = cold_count + 1;
-	    alert("allergy count :" + allergy_count);
+	    alert("cold count : " + cold_count);
     }
-
-//Function to calculate results and display them on the results page//
+//When cold button is clicked, cold score goes up by 1//
+	
     function displayResults() {
-        var allergyPercent = (allergy_count / (allergy_count + cold_count)) * 100;
-        var coldPercent = (cold_count / (allergy_count + cold_count)) * 100;
+        var allergyPercent = (allergy_count/4) * 100;
+        var coldPercent = (cold_count/4) * 100;
         var resultText = document.getElementById("results");
-        resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "% + "<br> Probability it is a cold = " + coldPercent + "%";
+        resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "%" + "<br> Probability it is a cold = " + coldPercent + "%";
     }
+//At the end, function called to display probability of allergies vs cold//
+
 </script>
 
 
@@ -109,7 +110,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<a href="#two" onclick="coldAdd();" class="w3-btn w3-black" > No </a>
 	</div>
 </div>
-//code that puts out first question and then links to question two. Adds value 1 to either allergy or cold depending on button//
+<!--code that puts out first question and then links to question two. Adds value 1 to either allergy or cold depending on button-->
 <div class="page" id="two">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
@@ -121,7 +122,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<a href="#three" onclick="coldAdd()"; class="w3-btn w3-black" > No </a>
 	</div>
 </div>	
-//code that puts out second question and then links to question three. Adds value 1 to either allergy or cold depending on button//
+<!--code that puts out second question and then links to question three. Adds value 1 to either allergy or cold depending on button-->
 
 <div class="page" id="three">
 	<div class="w3-container w3-flat-carrot">
@@ -134,7 +135,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<a href="#four" onclick="coldAdd();" class="w3-btn w3-black" > No </a>
 	</div>
 </div>	
-//code that puts out third question and then links to question four. Adds value 1 to either allergy or cold depending on button//
+<!--code that puts out third question and then links to question four. Adds value 1 to either allergy or cold depending on button-->
 
 
 <div class="page" id="four">
@@ -148,13 +149,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<a href="#results"onclick="coldAdd();" class="w3-btn w3-black" > No </a>
 	</div>
 </div>
-//code that puts out 4th question and then links to results. Adds value 1 to either allergy or cold depending on button//
-
+<!--code that puts out 4th question and then links to results. Adds value 1 to either allergy or cold depending on button-->
 
 <div class="page" id="results">
         <div class="w3-container w3-flat-carrot">
             <h1>Results</h1>
         </div> 
+	
         <div id="content" class="w3-container">
             <a onclick="displayResults();" class="w3-btn v3-grey w3-round"> Click for results </a>
 	    <p id="results"></p>
